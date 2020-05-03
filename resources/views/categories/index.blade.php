@@ -48,6 +48,12 @@
                 </div>
               </div>
         </div>
-    </div>
-    
+@endsection
+
+@section('scripts')
+    <script>
+        function handleDelete() {
+            console.log('deleting')
+        }
+    </script>
 @endsection
