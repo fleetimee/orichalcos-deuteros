@@ -7,7 +7,7 @@
             Create Post
         </div>
         <div class="card-body">
-            <form action="{{ route('posts.store') }}" method="POST">
+            <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
     
                 <div class="form-group">
@@ -24,7 +24,7 @@
                     <label for="content">Content</label>
                     <textarea name="content" id="content" cols="5" rows="5" class="form-control"></textarea>
                 </form>
-                
+
                 <div class="form-group">
                     <label for="published_at">Published At</label>
                     <input type="text" class="form-control" name="published_at" id="published_at">
