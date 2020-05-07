@@ -8,6 +8,29 @@
     <div class="card card-default">
         <div class="card-header">Posts</div>
         <div class="card-body">
+            <table class="table">
+                <thead>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    @foreach ($posts as $post)
+                    <tr>
+                        <td>
+                            <img src="/storage/{{ ($post->image) }}" width="120px" height="60px" alt="">
+                        </td>
+                        <td>
+                            {{ $post->title }}
+                        </td>
+                        <td class="float-right">
+                            <a href="" class="btn btn-info btn-sm">Edit</a>
+                            <a href="" class="btn btn-danger btn-sm">Trash</a>
+                        </td>
+                    </tr>
+                </tbody> 
+                @endforeach
+            </table>
             
         </div>
     </div>
