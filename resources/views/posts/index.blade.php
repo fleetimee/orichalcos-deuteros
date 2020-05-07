@@ -25,7 +25,11 @@
                         </td>
                         <td class="float-right">
                             <a href="" class="btn btn-info btn-sm">Edit</a>
-                            <a href="" class="btn btn-danger btn-sm">Trash</a>
+                            <form action="{{ route('posts.destroy', $post->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" href="" class="btn btn-danger btn-sm">Trash</button>
+                            </form>
                         </td>
                     </tr>
                 </tbody> 
