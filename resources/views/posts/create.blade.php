@@ -39,7 +39,7 @@
                     <trix-editor input="content"></trix-editor>
                 </form>
 
-                <div class="form-group">
+                <div class="form-group my-3">
                     <label for="published_at">Published At</label>
                     <input type="text" class="form-control" name="published_at" id="published_at" value="{{ isset($post->published_at) ? $post->published_at : '' }}">
                 </div>
