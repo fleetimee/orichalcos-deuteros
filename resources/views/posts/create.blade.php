@@ -4,7 +4,7 @@
 
     <div class="card card-default">
         <div class="card-header">
-            Create Post
+            {{ isset($post->id) ? 'Edit Post' : 'Create Post' }}
         </div>
         <div class="card-body">
             @if ($errors->any())
@@ -18,29 +18,37 @@
                 </ul>
             </div>
             @endif
-            <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ isset($post) ? route('posts.update', $post->id) : route('posts.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
-    
+                @if (isset($post))
+                    @method('PUT')
+                @endif
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input type="text" class="form-control" name="title" id="title">
+                    <input type="text" class="form-control" name="title" id="title" value="{{ isset($post->title) ? $post->title : '' }}">
                 </div>
 
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <textarea name="description" id="description" cols="5" rows="5" class="form-control"></textarea>
+                    <textarea name="description" id="description" cols="5" rows="5" class="form-control">{{ isset($post->description) ? $post->description : '' }}</textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="content">Content</label>
-                    <input id="content" type="hidden" name="content">
+                    <input id="content" type="hidden" name="content" value="{{ isset($post->content) ? $post->content : '' }}">
                     <trix-editor input="content"></trix-editor>
                 </form>
 
                 <div class="form-group">
                     <label for="published_at">Published At</label>
-                    <input type="text" class="form-control" name="published_at" id="published_at">
+                    <input type="text" class="form-control" name="published_at" id="published_at" value="{{ isset($post->published_at) ? $post->published_at : '' }}">
                 </div>
+
+                @if (isset($post))
+                    <div class="form-group">
+                        <img src="/storage/{{ ($post->image) }}" alt="" style="width: 100%">
+                    </div>
+                @endif
 
                 <div class="form-group">
                     <label for="image">Image</label>
@@ -49,7 +57,7 @@
 
                 <div class="form-group">
                     <button type="submit" class="btn btn-success">
-                        Create Post
+                        {{ isset($post) ? 'Update Post' : 'Create Post' }}
                     </button>
                 </div>
         </div>

@@ -26,11 +26,11 @@
                             {{ $post->title }}
                         </td>
                         @if (!$post->trashed())
-                            <td>
-                                <a href="" class="btn btn-info btn-sm">Edit</a>
+                            <td class="float-right">
+                                <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-info btn-sm">Edit</a>
                             </td>
                         @endif
-                        <td class="float-right">
+                        <td class="ml-5">
                             <form action="{{ route('posts.destroy', $post->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
