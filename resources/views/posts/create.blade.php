@@ -56,6 +56,23 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="Category">Category</label>
+                    <select name="category" id="category" class="form-control">
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->id }}"
+                                    @if (isset($post))
+                                        @if ($category->id == $post->category_id)
+                                        selected
+                                        @endif 
+                                    @endif
+                                >
+                                {{ $category->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class="form-group">
                     <button type="submit" class="btn btn-success">
                         {{ isset($post) ? 'Update Post' : 'Create Post' }}
                     </button>

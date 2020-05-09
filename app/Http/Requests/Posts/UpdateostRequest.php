@@ -27,7 +27,8 @@ class UpdateostRequest extends FormRequest
             'title' => 'required',
             'description' => 'required',
             'content' => 'required',
-            'published_at' => 'required'
+            'published_at' => 'required',
+            'category' => 'required'
         ];
     }
 }
