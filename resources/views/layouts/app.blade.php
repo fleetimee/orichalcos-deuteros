@@ -17,6 +17,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 
     <style>
         .btn-info {
@@ -29,7 +30,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    <img src="https://i.postimg.cc/Ss3B0HPq/Webp-net-resizeimage.png" width="auto" height="35px" alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -81,32 +82,33 @@
             @auth
             <div class="container">
                 @if (session()->has('success'))
-                    <div class="alert alert-success">
+                    <div class="alert alert-success"><i class="las la-check"></i>
                         {{ session()->get('success') }}
                     </div>
                 @endif
                 @if (session()->has('error'))
-                <div class="alert alert-danger">
+                <div class="alert alert-danger"><i class="las la-times"></i>
                     {{ session()->get('error') }}
                 </div>
-            @endif
+                @endif
                 <div class="row">
                     <div class="col-md-4">
                         <ul class="list-group">
                             <li class="list-group-item">
-                                <a href="{{ route('posts.index') }}">Posts</a>
+                                
+                                <a href="{{ route('posts.index') }}"><i class="las la-newspaper"></i> Posts</a>
                             </li>
                             <li class="list-group-item">
-                                <a href="{{ route('tags.index') }}">Tags</a>
+                                <a href="{{ route('tags.index') }}"><i class="las la-tags"></i> Tags</a>
                             </li>
                             <li class="list-group-item">
-                                <a href="{{ route('categories.index') }}">Category</a>
+                                <a href="{{ route('categories.index') }}"><i class="las la-swatchbook"></i> Category</a>
                             </li>
                         </ul>
 
                         <ul class="list-group mt-5">
                             <li class="list-group-item">
-                                <a href="{{ route('trashed-posts.index') }}">Trashed Posts</a>
+                                <a href="{{ route('trashed-posts.index') }}"><i class="las la-trash"></i> Trashed Posts</a>
                             </li>
                         </ul>
                     </div>
