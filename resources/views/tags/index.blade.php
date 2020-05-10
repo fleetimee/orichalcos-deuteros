@@ -21,7 +21,7 @@
                             {{ $tag->name }}
                         </td>
                         <td>
-                            0
+                            {{ $tag->post->count() }}
                         </td>
                         <td class="float-right">
                             <a href="{{ route('tags.edit', $tag->id) }}"

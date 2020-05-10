@@ -62,6 +62,25 @@
                     </select>
                 </div>
 
+                @if ($tags->count() > 0)
+                    <div class="form-group">
+                        <label for="tags">Tags</label>
+                        <select name="tags[]" id="tags" class="form-control" multiple>
+                            @foreach ($tags as $tag)
+                                <option value="{{ $tag->id }}"
+                                @if (isset($post))
+                                    @if ($post->hasTag($tag->id))
+                                        selected
+                                    @endif
+                                @endif
+                                >
+                                    {{ $tag->name }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+                @endif
+
                 <div class="form-group">
                     <button type="submit" class="btn btn-success">
                         {{ isset($post) ? 'Update Post' : 'Create Post' }}
@@ -78,11 +97,23 @@
         flatpickr('#published_at', {
             enableTime: true
         })
+
+        document.addEventListener("trix-file-accept", function(event) {
+            event.preventDefault();
+        });
     </script>
 @endsection
 
 @section('css')
+    <style>
+        .trix-button--icon-attach,
+        .trix-button--icon-attach { display: none; }
+
+        .trix-button--icon-increase-nesting-level,
+        .trix-button--icon-decrease-nesting-level { display: none; }
+    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.1/trix.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
 @endsection
 
