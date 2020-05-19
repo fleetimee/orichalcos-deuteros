@@ -40,7 +40,7 @@
           </ul>
         </section>
 
-        <a class="btn btn-xs btn-round btn-success" href="{{ route('login') }}">Login</a>
+        <a class="btn btn-xs btn-round btn-success" href="{{ route('login') }}">Admin Panel</a>
 
       </div>
     </nav><!-- /.navbar -->
@@ -72,7 +72,7 @@
 
             <div class="col-md-8 col-xl-9">
               <div class="row gap-y">
-                @foreach ($posts as $post)
+                @foreach ($posts->sortByDesc('published_at') as $post)
                   <div class="col-md-6">
                     <div class="card border hover-shadow-6 mb-6 d-block ">
                       <a href="#"><img class="card-img-top" src="{{'storage/' .$post->image }}" alt="Card image cap"></a>
@@ -138,10 +138,6 @@
                 </div>
 
                 <hr>
-
-                <h6 class="sidebar-title">About</h6>
-                <p class="small-3">TheSaaS is a responsive, professional, and multipurpose SaaS, Software, Startup and WebApp landing template powered by Bootstrap 4. TheSaaS is a powerful and super flexible tool for any kind of landing pages.</p>
-
 
               </div>
             </div>
