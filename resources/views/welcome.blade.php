@@ -26,9 +26,9 @@
 
         <div class="navbar-left">
           <button class="navbar-toggler" type="button">&#9776;</button>
-          <a class="navbar-brand" href="../index.html">
+          <a class="navbar-brand" href="/">
             <img style="max-width: 25%; height: auto;" class="logo-dark" src="{{ asset('images/logo-dark.png') }}" alt="logo">
-            <img class="logo-light" src="../assets/img/logo-light.png" alt="logo">
+            <img style="max-width: 50%; height: auto;" class="logo-light" src="{{ asset('images/logo-light.png') }}" alt="logo">
           </a>
         </div>
 
@@ -47,14 +47,15 @@
 
 
     <!-- Header -->
-    <header class="header text-center text-white" style="background-image: linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%);">
+
+    <header class="header text-center text-white" style="background-image: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */;">
       <div class="container">
 
         <div class="row">
           <div class="col-md-8 mx-auto">
 
-            <h1>Latest Blog Posts</h1>
-            <p class="lead-2 opacity-90 mt-6">Read and get updated on how we progress</p>
+            <h1>Allbike Blog</h1>
+            <p class="lead-2 opacity-90 mt-6">Dapatkan informasi terbaru tentang dunia persepedaan tanah air.</p>
 
           </div>
         </div>
@@ -155,10 +156,10 @@
 
           <div class="col-6 col-lg-3">
             <a href="../index.html">
-              <img style="display: block; max-width: 50%; height: auto;" src="{{ asset('images/logo-dark.png') }}" alt="logo"></a>
+             
           </div>
 
-          <div class="col-6 col-lg-3 text-right order-lg-last">
+          <div class="justify-content-center col-6 col-lg-3 text-right order-lg-last">
             <div class="social">
               <a class="social-facebook" href="https://www.facebook.com/thethemeio"><i class="fa fa-facebook"></i></a>
               <a class="social-twitter" href="https://twitter.com/thethemeio"><i class="fa fa-twitter"></i></a>
@@ -166,6 +167,8 @@
               <a class="social-dribbble" href="https://dribbble.com/thethemeio"><i class="fa fa-dribbble"></i></a>
             </div>
           </div>
+
+     
 
 
 
