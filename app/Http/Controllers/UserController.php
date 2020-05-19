@@ -33,7 +33,7 @@ class UserController extends Controller
     {
         $user = auth()->user();
 
-        $user->update ([
+        $user->update([
             'name' => $request->name,
             'about' => $request->about
         ]);
