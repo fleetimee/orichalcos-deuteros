@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to Allbike-cms 👋</h1>
+<h1 align="center">Welcome to allbike-cms 👋</h1>
 <p>
   <a href="https://twitter.com/kooongggg" target="_blank">
     <img alt="Twitter: kooongggg" src="https://img.shields.io/twitter/follow/kooongggg.svg?style=social" />
