@@ -10,6 +10,8 @@
 ## Install
 
 ```sh
+git clone https://github.com/Novian227/allbike-cms.git
+cd allbike-cms
 composer install
 php artisan migrate --seed
 php artisan key:generate
