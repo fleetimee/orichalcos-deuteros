@@ -81,72 +81,28 @@
             <div class="row">
               <div class="col-lg-8 mx-auto">
   
-                <div class="media-list">
   
-                  <div class="media">
-                    <img class="avatar avatar-sm mr-4" src="../assets/img/avatar/1.jpg" alt="...">
-  
-                    <div class="media-body">
-                      <div class="small-1">
-                        <strong>Maryam Amiri</strong>
-                        <time class="ml-4 opacity-70 small-3" datetime="2018-07-14 20:00">24 min ago</time>
-                      </div>
-                      <p class="small-2 mb-0">Thoughts his tend and both it fully to would the their reached drew project the be I hardly just tried constructing I his wonder, that his software and need out where didn't the counter productive.</p>
-                    </div>
-                  </div>
-  
-  
-  
-                  <div class="media">
-                    <img class="avatar avatar-sm mr-4" src="../assets/img/avatar/2.jpg" alt="...">
-  
-                    <div class="media-body">
-                      <div class="small-1">
-                        <strong>Hossein Shams</strong>
-                        <time class="ml-4 opacity-70 small-3" datetime="2018-07-14 20:00">6 hours ago</time>
-                      </div>
-                      <p class="small-2 mb-0">Was my suppliers, has concept how few everything task music.</p>
-                    </div>
-                  </div>
-  
-  
-  
-                  <div class="media">
-                    <img class="avatar avatar-sm mr-4" src="../assets/img/avatar/3.jpg" alt="...">
-  
-                    <div class="media-body">
-                      <div class="small-1">
-                        <strong>Sarah Hanks</strong>
-                        <time class="ml-4 opacity-70 small-3" datetime="2018-07-14 20:00">Yesterday</time>
-                      </div>
-                      <p class="small-2 mb-0">Been me have the no a themselves, agency, it that if conduct, posts, another who to assistant done rattling forth there the customary imitation.</p>
-                    </div>
-                  </div>
-  
-                </div>
-  
-  
-                <hr>
-  
-  
-                <form action="#" method="POST">
-  
-                  <div class="row">
-                    <div class="form-group col-12 col-md-6">
-                      <input class="form-control" type="text" placeholder="Name">
-                    </div>
-  
-                    <div class="form-group col-12 col-md-6">
-                      <input class="form-control" type="text" placeholder="Email">
-                    </div>
-                  </div>
-  
-                  <div class="form-group">
-                    <textarea class="form-control" placeholder="Comment" rows="4"></textarea>
-                  </div>
-  
-                  <button class="btn btn-primary btn-block" type="submit">Submit your comment</button>
-                </form>
+                <div id="disqus_thread"></div>
+                    <script>
+
+                        /**
+                        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+                        var disqus_config = function () {
+                        this.page.url = "{{ config('app.url') }}:8000/blog/posts/{{ $post->id }}";  // Replace PAGE_URL with your page's canonical URL variable
+                        this.page.identifier = "{{ $post->id }}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                        };
+ 
+                        (function() { // DON'T EDIT BELOW THIS LINE
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://allbike-blog.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
   
               </div>
             </div>
